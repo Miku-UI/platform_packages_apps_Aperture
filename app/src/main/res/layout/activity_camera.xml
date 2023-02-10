@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2022 The LineageOS Project
+     SPDX-FileCopyrightText: 2022-2023 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -27,7 +27,7 @@
         android:id="@+id/previewBlurView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="@android:color/black"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/viewFinder"
         app:layout_constraintEnd_toEndOf="@+id/viewFinder"
@@ -89,8 +89,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/viewFinder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:thumbColor="@color/white"
-        app:thumbTextColor="@color/black"
+        app:thumbColor="@android:color/white"
+        app:thumbTextColor="@android:color/black"
         app:thumbTextSize="10dp"
         app:trackColor="#7FCCCCCC" />
 
@@ -103,8 +103,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/viewFinder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/viewFinder"
-        app:thumbColor="@color/white"
-        app:thumbTextColor="@color/black"
+        app:thumbColor="@android:color/white"
+        app:thumbTextColor="@android:color/black"
         app:thumbTextSize="10dp"
         app:trackColor="#7FCCCCCC" />
 
@@ -232,10 +232,16 @@
         android:id="@+id/secondaryBottomBarLayout"
         android:layout_width="0dp"
         android:layout_height="72dp"
-        android:background="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/primaryBarLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
             android:id="@+id/proButton"
@@ -273,7 +279,6 @@
         android:id="@+id/primaryBarLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/primary_bar_layout_background"
         android:paddingTop="16dp"
         app:layout_constraintBottom_toTopOf="@+id/modeSelectorLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -349,11 +354,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/cameraModeHighlight"
-            style="@style/Theme.Aperture.Camera.CameraModeSelectorButtonHighlight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorSecondaryContainer"
             android:contentDescription="@string/camera_mode_highlight_description"
             android:enabled="false"
             android:padding="0dp"
@@ -364,7 +369,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/photoModeButton"
             style="@style/Theme.Aperture.Camera.CameraModeSelectorButton"
             android:layout_width="wrap_content"
@@ -380,7 +385,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/videoModeButton"
             style="@style/Theme.Aperture.Camera.CameraModeSelectorButton"
             android:layout_width="wrap_content"
@@ -395,7 +400,7 @@
             app:layout_constraintStart_toEndOf="@+id/photoModeButton"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/qrModeButton"
             style="@style/Theme.Aperture.Camera.CameraModeSelectorButton"
             android:layout_width="wrap_content"
@@ -410,14 +415,15 @@
             app:layout_constraintStart_toEndOf="@+id/videoModeButton"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/videoDuration"
-            style="@style/Theme.Aperture.Camera.VideoDurationButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/rec_red"
             android:contentDescription="@string/video_mode_button_description"
             android:enabled="false"
             android:padding="0dp"
+            android:textColor="@android:color/white"
             android:visibility="gone"
             app:iconPadding="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
