@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2022 The LineageOS Project
+ * SPDX-FileCopyrightText: 2022-2023 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -15,6 +15,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
@@ -55,17 +56,12 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {
+        private val enableZsl by lazy { findPreference<SwitchPreference>("enable_zsl")!! }
+        private val photoCaptureMode by lazy {
+            findPreference<ListPreference>("photo_capture_mode")!!
+        }
         private val saveLocation by lazy { findPreference<SwitchPreference>("save_location") }
         private val shutterSound by lazy { findPreference<SwitchPreference>("shutter_sound") }
-        private val videoStabilization by lazy {
-            findPreference<SwitchPreference>("video_stabilization")!!
-        }
-        private val videoStabilizationPreview by lazy {
-            findPreference<SwitchPreference>("video_stabilization_preview")!!
-        }
-        private val videoStabilizationOis by lazy {
-            findPreference<SwitchPreference>("video_stabilization_ois")!!
-        }
 
         private val permissionsUtils by lazy { PermissionsUtils(requireContext()) }
 
@@ -80,38 +76,17 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-        private val videoStabilizationPreferenceChangeListener =
+        private val photoCaptureModePreferenceChangeListener =
             Preference.OnPreferenceChangeListener { preference, newValue ->
-                val videoStabilizationEnabled =
-                    if (preference == videoStabilization) {
-                        newValue as Boolean
-                    } else {
-                        videoStabilization.isChecked
-                    }
-                val videoStabilizationPreviewEnabled =
-                    if (preference == videoStabilizationPreview) {
-                        newValue as Boolean
-                    } else {
-                        videoStabilizationPreview.isChecked
-                    }
-                val videoStabilizationOisEnabled =
-                    if (preference == videoStabilizationOis) {
-                        newValue as Boolean
-                    } else {
-                        videoStabilizationOis.isChecked
-                    }
+                val currentPhotoCaptureMode = if (preference == photoCaptureMode) {
+                    newValue as String
+                } else {
+                    photoCaptureMode.value
+                }
 
-                val videoStabilizationPreviewCanBeEnabled =
-                    videoStabilizationEnabled && !videoStabilizationOisEnabled
-                videoStabilizationPreview.isChecked =
-                    videoStabilizationPreview.isChecked && videoStabilizationPreviewCanBeEnabled
-                videoStabilizationPreview.isEnabled = videoStabilizationPreviewCanBeEnabled
-
-                val videoStabilizationOisCanBeEnabled =
-                    videoStabilizationEnabled && !videoStabilizationPreviewEnabled
-                videoStabilizationOis.isChecked =
-                    videoStabilizationOis.isChecked && videoStabilizationOisCanBeEnabled
-                videoStabilizationOis.isEnabled = videoStabilizationOisCanBeEnabled
+                val enableZslCanBeEnabled = currentPhotoCaptureMode == "minimize_latency"
+                enableZsl.isChecked = enableZsl.isChecked && enableZslCanBeEnabled
+                enableZsl.isEnabled = enableZslCanBeEnabled
 
                 true
             }
@@ -139,18 +114,9 @@ class SettingsActivity : AppCompatActivity() {
             }
             shutterSound?.isVisible = !CameraSoundsUtils.mustPlaySounds
 
-            // Video stabilization
-            videoStabilization.onPreferenceChangeListener =
-                videoStabilizationPreferenceChangeListener
-            videoStabilizationPreview.onPreferenceChangeListener =
-                videoStabilizationPreferenceChangeListener
-            videoStabilizationOis.onPreferenceChangeListener =
-                videoStabilizationPreferenceChangeListener
-
-            videoStabilizationPreview.isEnabled =
-                videoStabilization.isChecked && !videoStabilizationOis.isChecked
-            videoStabilizationOis.isEnabled =
-                videoStabilization.isChecked && !videoStabilizationPreview.isChecked
+            // Photo capture mode
+            photoCaptureMode.onPreferenceChangeListener = photoCaptureModePreferenceChangeListener
+            enableZsl.isEnabled = photoCaptureMode.value == "minimize_latency"
         }
     }
 }

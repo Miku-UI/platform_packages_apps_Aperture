@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2022 The LineageOS Project
+     SPDX-FileCopyrightText: 2022-2023 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -12,11 +12,11 @@
     <string name="flash_button_description">Modaliteti i blicit</string>
     <string name="flip_camera_button_description">Rrotulloje kamerën</string>
     <string name="gallery_button_description">Galeria</string>
+    <string name="google_lens_button_description">Hap Google Lens</string>
     <string name="image_view_description">Trego imazhin</string>
     <string name="photo_mode_button_description">Kalo në modalitetin e fotografisë</string>
     <string name="pro_button_description">Cilësimet PRO</string>
     <string name="qr_mode_button_description">Kalo në modalitetin e skanerit QR</string>
-    <string name="settings_back_button_description">Kthehuni në modalitetin e kamerës</string>
     <string name="shutter_button_description">Shkrepësi</string>
     <string name="video_mode_button_description">Kalo në modalitetin e videos</string>
     <string name="video_recording_state_button_description">Ndalo/rifillo regjistrimin e videos</string>
@@ -44,13 +44,15 @@
     <string name="qr_copy_description">Kopjo në \'clipboard\'</string>
     <string name="qr_icon_description">Ikonë</string>
     <string name="qr_share_description">Shpërndaje</string>
+    <string name="qr_wifi_title">Lidhu me këtë rrjet Wi-Fi</string>
+    <string name="qr_dpp_description">Konfiguro këtë pajisje</string>
     <string name="qr_text">Tekst</string>
     <string name="title_activity_settings">Cilësimet</string>
     <string name="general_header">Të përgjithshme</string>
     <string name="photos_header">Fotografitë</string>
     <string name="video_header">Video</string>
     <string name="bright_screen_title">Ekran i shndritshëm</string>
-    <string name="bright_screen_summary">Mbyll ndriçimin në 100%</string>
+    <string name="bright_screen_summary" formatted="false">Mbyll ndriçimin në 100%</string>
     <string name="save_location_title">Ruani të dhënat e vendndodhjes</string>
     <string name="save_location_summary">Përfshi vendndodhjen GPS në meta të dhëna</string>
     <string name="save_location_toast">Leja për vendodhjen nuk ështe lejuar nga përdoruesi.</string>
@@ -61,16 +63,17 @@
     <string name="photo_capture_mode_title">Metoda e kapjes</string>
     <string name="photo_capture_mode_maximize_quality">Maksimizo kualitetin</string>
     <string name="photo_capture_mode_minimize_latency">Minimizo vonesën</string>
-    <string name="photo_capture_mode_zsl">Shkrepje pa vonesë (eksperimentale)</string>
-    <string name="image_stabilization_title">Përdor stabilizimin e imazhit kur është e mundur.</string>
-    <string name="image_stabilization_summary">Nëse paisja e mundëson, përdor stabilizimin optik të imazhit</string>
-    <string name="video_stabilization_title">Përdor stabilizimin e videos kur është e mundur</string>
-    <string name="video_stabilization_summary">Nese e mundur, përdor stabilizim elektronik të imazhit (EIS)</string>
-    <string name="video_stabilization_ois_title">Përdor OIS në vënd të EIS kur është e mundur</string>
-    <string name="video_stabilization_ois_summary">Nëse paisja e lejon këtë, përdor stabilizim optik të imazhit (OIS) në vënd të stabilizimit elektronik të imazhit (EIS)</string>
-    <string name="video_stabilization_preview_title">Përdor stabilizimin në tregues nëse mundësohet</string>
-    <string name="video_stabilization_preview_summary">Nëse mundet, apliko stabilizimin e imazhit dhe në shfaqje, dhe nëse paisja e mundëson përdor automatikisht stabilizimin optik të imazhit njëkohësisht me atë elektronik. Nëse paisja mund të përcaktojë më të mirën. Vetëm disa paisje me Android 13 ose më të re e mundëson këtë</string>
+    <string name="enable_zsl_title">Aktivizo ZSL kur është e disponueshme</string>
+    <string name="enable_zsl_summary">Përdorni modalitetin Zero-Shutter Lag kur kamera e mbështet atë. Në këtë modalitet, efektet e fotografisë janë të çaktivizuara. Vini re se kjo mënyrë është aktualisht eksperimentale</string>
+    <string name="photo_ffc_mirror_title">Pasqyra e Kamerës së përparme</string>
+    <string name="photo_ffc_mirror_summary">Ruani fotot e kamerës së përparme siç shfaqen në pamjen paraprake</string>
+    <string name="video_stabilization_title">Aktivizo stabilizimin e videos</string>
+    <string name="video_stabilization_summary">Kur disponohet, aktivizoni stabilizimin e videos për të reduktuar dridhjet e kamerës gjatë regjistrimit</string>
     <string name="shortcut_selfie">Bën një selfie</string>
     <string name="shortcut_video">Kap një video</string>
     <string name="shortcut_qr">Skano një Barcode</string>
+    <string name="location_permission_dialog_title">Shtoni vendndodhjen e fotove dhe videove</string>
+    <string name="location_permission_dialog_description">Hartoni kujtimet tuaja duke përfshirë meta të dhënat e vendndodhjes me çdo kapje.</string>
+    <string name="location_permission_dialog_later">Më vonë</string>
+    <string name="location_permission_dialog_turn_on">Ndiz</string>
 </resources>

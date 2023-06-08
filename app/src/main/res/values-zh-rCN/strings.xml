@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2022 The LineageOS Project
+     SPDX-FileCopyrightText: 2022-2023 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -12,11 +12,11 @@
     <string name="flash_button_description">闪光灯模式</string>
     <string name="flip_camera_button_description">翻转摄像头</string>
     <string name="gallery_button_description">相册</string>
+    <string name="google_lens_button_description">打开 Google Lens</string>
     <string name="image_view_description">图像预览</string>
     <string name="photo_mode_button_description">切换到拍照模式</string>
     <string name="pro_button_description">专业设置</string>
     <string name="qr_mode_button_description">切换到二维码扫描模式</string>
-    <string name="settings_back_button_description">返回相机模式</string>
     <string name="shutter_button_description">快门</string>
     <string name="video_mode_button_description">切换到视频模式</string>
     <string name="video_recording_state_button_description">暂停/继续视频录制</string>
@@ -44,13 +44,15 @@
     <string name="qr_copy_description">复制到剪贴板</string>
     <string name="qr_icon_description">图标</string>
     <string name="qr_share_description">分享</string>
+    <string name="qr_wifi_title">连接到此 Wi-Fi 网络</string>
+    <string name="qr_dpp_description">配置此设备</string>
     <string name="qr_text">文本</string>
     <string name="title_activity_settings">设置</string>
     <string name="general_header">常规</string>
     <string name="photos_header">照片</string>
     <string name="video_header">视频</string>
     <string name="bright_screen_title">屏幕亮度</string>
-    <string name="bright_screen_summary">锁定亮度为 100%</string>
+    <string name="bright_screen_summary" formatted="false">锁定亮度为 100%</string>
     <string name="save_location_title">保存位置数据</string>
     <string name="save_location_summary">在元数据中包含 GPS 位置</string>
     <string name="save_location_toast">未授予位置权限。</string>
@@ -61,16 +63,17 @@
     <string name="photo_capture_mode_title">拍摄模式</string>
     <string name="photo_capture_mode_maximize_quality">最佳质量</string>
     <string name="photo_capture_mode_minimize_latency">最小延迟</string>
-    <string name="photo_capture_mode_zsl">拍摄无延迟（试验性）</string>
-    <string name="image_stabilization_title">若图像防抖可用，则启用</string>
-    <string name="image_stabilization_summary">若硬件支持，则启用光学防抖</string>
-    <string name="video_stabilization_title">若视频防抖可用，则启用</string>
-    <string name="video_stabilization_summary">当电子防抖(EIS)可用时，则启用</string>
-    <string name="video_stabilization_ois_title">可用时优先启用光学防抖而不是电子防抖</string>
-    <string name="video_stabilization_ois_summary">若硬件支持，使用光学防抖(OIS)而不是电子防抖(EIS)</string>
-    <string name="video_stabilization_preview_title">若防抖功能可用，则预览时启用它</string>
-    <string name="video_stabilization_preview_summary">如果硬件支持，也在预览中应用防抖。 如果设备认为适当，自动启用光学防抖(OIS)和电子防抖(EIS)。 只有基于Android 13或更高版本的部分设备支持此模式</string>
+    <string name="enable_zsl_title">可用时启用 ZSL</string>
+    <string name="enable_zsl_summary">当相机支持零快门延迟模式时使用它。此模式下相片效果被禁用。请注意此模式当前处于实验状态</string>
+    <string name="photo_ffc_mirror_title">镜像前置摄像头</string>
+    <string name="photo_ffc_mirror_summary">保存预览中显示的前置摄像头照片</string>
+    <string name="video_stabilization_title">启用视频防抖</string>
+    <string name="video_stabilization_summary">如果可用，启用视频防抖以减少录制时的抖动</string>
     <string name="shortcut_selfie">自拍</string>
     <string name="shortcut_video">拍视频</string>
     <string name="shortcut_qr">扫描条码</string>
+    <string name="location_permission_dialog_title">为照片和视频添加地理位置</string>
+    <string name="location_permission_dialog_description">在每次拍摄的照片视频中包含位置元数据便于日后回忆</string>
+    <string name="location_permission_dialog_later">稍后</string>
+    <string name="location_permission_dialog_turn_on">开启</string>
 </resources>
